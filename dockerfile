@@ -8,7 +8,7 @@ RUN curl https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/art
 # Run BuildTools
 RUN java -jar BuildTools.jar -o target --compile SPIGOT --rev ${VERSION}
 WORKDIR /opt/minecraft
-COPY server/ ./
+COPY ./ ./
 RUN cp /build/target/* ./spigot.jar
 
 FROM eclipse-temurin:17-alpine
